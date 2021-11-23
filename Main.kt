@@ -264,19 +264,19 @@ fun main() {
     fun turnHandler() {
 
         println("$currentTurn's turn:")
-        val movimiento = readLine()!!.lowercase()
-        currentCoords = movimiento[0].toString() + movimiento[1].toString()
-        if (movimiento == "exit") { // End Game
+        val move = readLine()!!.lowercase()
+        currentCoords = move[0].toString() + move[1].toString()
+        if (move == "exit") { // End Game
             println("Bye!")
             currentTurn = "exit"
-        } else if (movimiento.contains(regex)) { // input is valid
-            val c1Index = movimiento[0]
-            val c3Index = movimiento[2]
+        } else if (move.contains(regex)) { // input is valid
+            val c1Index = move[0]
+            val c3Index = move[2]
 
             val c1 = files.indexOf(c1Index) // Coords
-            val c2 = movimiento[1].digitToInt()
+            val c2 = move[1].digitToInt()
             val c3 = files.indexOf(c3Index)
-            val c4 = movimiento[3].digitToInt()
+            val c4 = move[3].digitToInt()
 
             moveHandler(c1, c2, c3, c4)
         } else {                                // input is NOT valid
