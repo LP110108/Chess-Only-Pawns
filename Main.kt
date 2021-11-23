@@ -1,5 +1,3 @@
-package chess
-
 enum class Pawns(val color: String, var left: Int) {
     WHITE("White", 8),
     BLACK("Black", 8);
